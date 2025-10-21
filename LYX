@@ -1,0 +1,168 @@
+local Translations = {
+   --["Speed Hub X | Version : 4.0.4"] = "LYX汉化",
+    ["Target Rebirths"] = "重生到指定",
+    ["Auto Rebirths On Target Rebirths"] = "开始重生",
+    ["Rebirths"] = "重生",
+    ["Speed Hub X | Version : 4.0.4"] = "LYX自己汉化",
+    ["Are you sure you want to unload the interface?"] = "你他妈确定要退出",
+    ["Yes"] = "跑路喽😂",
+    ["No"] = "不跑了🤕",
+    ["CIose"] = "正在犹豫要不要跑路",      ["Home"] = "家",
+    ["Discord"] = "不知名蓝色软件",
+    ["Discord lnvite"] = "神秘蓝色软件链接",
+    ["Set WalkSpeed"] = "设定速度",
+    ["Enable WalkSpeed"] = "开启速度",
+    ["Main"] = "主要",
+    ["Rebirths"] = "重生",
+    ["Killer"] = "击杀",
+    ["Crystal"] = "钻石",
+    ["Status"] = "状态", 
+    ["Infinite Jump"] = "无限跳",
+    ["Size"] = "尺寸",
+    ["Size Amount"] = "大小金额",
+    ["Auto Set Size"] = "自动设置大小",
+    ["Select City Gym"] = "选择城市健身房",
+    ["Select Gym"] = "选择健身房",
+    ["Frost"] = "霜",
+    ["Auto Farm On Select Gym"] = "选择健身房上的自动农场",
+    ["Auto Farm Weight"] = "自动农场重量", 
+    ["Auto Farm Pushups"] = "自动俯卧撑",     ["Farming Kill"] = "农业杀戮",
+    ["Select Whitelist"] = "选择白名单",
+        ["Refresh Select Whitelist"] = "刷新白名单选择",
+    ["Choose Mode Kill"] = "选择击杀模式",
+    ["Auto Kill"] = "自动击杀",
+    ["Auto Kill Evil Karma"] = "自动击杀邪恶阵营",
+    ["Auto Kill Good Karma"] = "自动击杀善良阵营",
+    ["Farming Kill Player"] = "挂机击杀玩家",
+    ["Select Player"] = "选择玩家",
+    ["Refresh Select Player"] = "刷新玩家选择",
+    ["Auto Kill Player"] = "自动击杀玩家",
+    ["Spectate Player"] = "观战玩家",
+    ["Select Crystal"] = "选择水晶",
+    ["Auto Open Crystal"] = "自动开启水晶",
+    ["Shop Pets"] = "商店宠物",
+    ["Select Pets"] = "选择宠物",
+      ["Lock Position"] = "锁定位置",
+    ["Anti-Knockback"] = "抗击退",
+    ["Walk On Water"] = "在水上行走",
+    ["-[Faster Tool]-"] = "更快的工具",
+    ["Set Faster Weight"] = "设置更快的权重",
+    ["Brawl"] = "拳击比赛🤓",
+    ["Auto Join Brawl"] = "自动加入比赛",
+    ["Auto Win Brawl"] = "自动赢得比赛",
+    [""] = ""
+}
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then return text end
+    
+    if Translations[text] then
+        return Translations[text]
+    end
+    
+    for en, cn in pairs(Translations) do
+        if text:find(en) then
+            return text:gsub(en, cn)
+        end
+    end
+    
+    return text
+end
+
+local function setupTranslationEngine()
+    local success, err = pcall(function()
+        local oldIndex = getrawmetatable(game).__newindex
+        setreadonly(getrawmetatable(game), false)
+        
+        getrawmetatable(game).__newindex = newcclosure(function(t, k, v)
+            if (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
+                v = translateText(tostring(v))
+            end
+            return oldIndex(t, k, v)
+        end)
+        
+        setreadonly(getrawmetatable(game), true)
+    end)
+    
+    if not success then
+        warn("元表劫持失败:", err)
+       
+        local translated = {}
+        local function scanAndTranslate()
+            for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+                if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                    pcall(function()
+                        local text = gui.Text
+                        if text and text ~= "" then
+                            local translatedText = translateText(text)
+                            if translatedText ~= text then
+                                gui.Text = translatedText
+                                translated[gui] = true
+                            end
+                        end
+                    end)
+                end
+            end
+            
+            local player = game:GetService("Players").LocalPlayer
+            if player and player:FindFirstChild("PlayerGui") then
+                for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                        pcall(function()
+                            local text = gui.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    gui.Text = translatedText
+                                    translated[gui] = true
+                                end
+                            end
+                        end)
+                    end
+                end
+            end
+        end
+        
+本地函数setupDescendantListener(父)
+父母。后代添加：连接(函数(后代)
+如果子代：Isa("TextLabel")或子代：Isa("TextButton")或子代：Isa("TextBox")，则
+task.wait(0.1)
+pcall(函数()
+本地文本=descendant.Text
+如果text和text~=""，则
+本地translatedText=translateText(文本)
+如果translatedText~=text，则
+descendant.Text=translatedText
+结束
+结束
+结束)
+结束
+结束)
+结束
+        
+pcall(setupDescendantListener，游戏：GetService("CoreGui"))
+本地玩家=游戏：GetService("玩家").LocalPlayer
+如果玩家和玩家：FindFirstChild(“PlayerGui”)，则
+pcall(setupDescendantListener，player.PlayerGui)
+结束
+        
+而真做
+scanAndTranslate()
+task.wait(3)
+结束
+结束
+结束
+
+task.wait(2)
+
+setupTranslationEngine()
+
+本地成功，err=pcall(函数()
+loadstring(游戏：HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"，true))()
+
+
+结束)
+
+如果不成功那么
+warn("加载失败："，犯错)
+结束
