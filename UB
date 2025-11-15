@@ -1,0 +1,165 @@
+local Translations = {
+["Loader"] = "LYX汉化",
+["Settings"] = "设置",
+["Load"] = "加载",
+["Queue On Teleport (Execute Native On Teleport AKA Auto-Execute On Teleport)"] = "传送时排队（传送时执行原生程序，又称传送时自动执行）",
+["Join Our Discord Server"] = "加入我们的Discord服务器",
+["Key"] = "密钥",
+["Copy Key Url : Get Key (Linkvertise)"] = "复制密钥链接：获取密钥（Linkvertise平台）",
+["Copy Key Url : Get Key (Lootlabs)"] = "复制密钥链接：获取密钥（Lootlabs平台）",
+["Copy Script Loader"] = "复制脚本加载器",
+["Destroy"] = "关闭",
+["Native"] = "神秘的蓝色软件😱",
+["Main"] = "主界面",
+["You are being invited to our Discord server!"] = "您被邀请加入我们的Discord服务器！",
+["Save Settings"] = "保存设置",
+["Reset Settings"] = "重置设置",
+["Copy Settings"] = "复制设置",
+["Close Native [Native Dead Rails] [v0138]"] = "LYX汉化",
+["Are you sure you want to close Native [Native Dead Rails] [v0138] Freemium 0.5 Days? You cannot open this again."] = "老子汉话半天，你确定要关😡😡😡[v0138] 免费体验版（剩余0.5天)",
+["Party Id"] = "队伍ID",
+["Configuration"] = "配置",
+["Utility"] = "实用工具",
+["Autos"] = "自动功能",
+["Areas"] = "区域",
+["Market"] = "市场",
+["Miscellaneous"] = "杂项",
+["Auto Play Again"] = "自动重新游玩",
+["Reset After [Auto Bonds]"] = "[自动债券]后重置",
+["Re-match Lobby After [Auto Bonds]"] = "[自动债券]后重新匹配大厅",
+["Skip Loading Delay [Auto Bonds]"] = "[自动债券]跳过加载延迟",
+["Auto Drive Train"] = "自动驾驶列车",
+["Auto Bonds"] = "自动债券",
+["Auto Win"] = "自动获胜",
+["Expand Fuel Detector"] = "扩展燃料探测器",
+["Auto Fill Fuel"] = "自动填充燃料",
+["Show Vault Code"] = "显示金库密码",
+["Native [Native Dead Rails] [v0138] Freemium 0.5 Days"] = "原生程序 [LYX汉化脚本] [v0138] 免费体验版（剩余0.5天）",
+["Aim"] = "瞄准",
+["Silent Aim FOV"] = "静默瞄准视野范围",
+["Burst"] = "连发",
+["Gun Burst"] = "枪械连发",
+["MaximGun Burst Amount"] = "马克沁机枪连发数量",
+["MaximGun Burst"] = "马克沁机枪连发",
+["Bring"] = "携带",
+["Bring Items"] = "携带物品",
+["Placeholder"] = "占位符",
+["Drag"] = "拖拽",
+["Drag Offset"] = "拖拽偏移量",
+["Far Drag"] = "远距离拖拽",
+["Instant Interaction"] = "即时交互",
+["Realistic Graphics (Breaks some prompt functionality for now)"] = "写实画质（目前会导致部分提示功能失效）",
+["Optimize Game (Irreversible; Removes Players)"] = "优化游戏（不可逆转；会移除其他玩家）",
+["Modifier"] = "调整器",
+["Field Of View"] = "视野范围",
+["Settings"] = "设置",
+["Miscellaneous"] = "杂项",
+["Debug"] = "调试",
+["Save Settings"] = "保存设置",
+["Reset Settings"] = "重置设置",
+["Copy Settings"] = "复制设置",
+["Silent Execution"] = "静默执行",
+["FPS"] = "帧率",
+["ESP"] = "额外感官知觉（游戏透视功能）",
+["Miscellaneous"] = "杂项",
+["Bypass Chair (Bypass/Sit on any unwelded chair)"] = "绕过椅子限制（可坐在任意未焊接的椅子上）",
+["Get Bypass Chair"] = "获取绕过椅子限制功能",
+["Melee"] = "近战",
+["Auto Swing"] = "自动挥砍",
+["Instant Kill"] = "秒杀",
+["Gun"] = "枪械",
+["Instant Reload"] = "瞬间换弹",
+["Auto Reload [Gun]"] = "自动换弹【枪械】",
+["Kill All Enemies (Moving Train)"] = "消灭所有敌人（移动列车）",
+["Kill Aura"] = "范围秒杀",
+["Consumable"] = "消耗品",
+["Auto Use Bandage"] = "自动使用绷带",
+["Auto Use Snake Oil"] = "自动使用蛇油",
+["Auto Consume Corpse"] = "自动吞噬尸体",
+["Collection"] = "收集",
+["Collect Items"] = "收集物品",
+["Auto Collect"] = "自动收集",
+["Teleports"] = "传送",
+["Teleport to Train"] = "传送到列车",
+["Teleport to Fort Constitution"] = "传送到宪法堡垒",
+["Teleport to Sterling"] = "传送到斯特林",
+["Teleport to Strange Pyramid"] = "传送到奇异金字塔",
+["Teleport to Tesla Lab"] = "传送到特斯拉实验室",
+["Weld(Weld Anywhere)"] = "焊接（任意位置焊接）",
+["TeleportDestination"] = "传送目标点",
+["None"] = "无",
+["Teleport "] = "传送",
+["Fullbright"] = "全亮度",
+["Mod Detection"] = "模组检测",
+["Warning"] = "警告",
+["Third Person"] = "第三人称",
+["Faster Walk"] = "加速行走",
+["No-clip"] = "穿墙",
+["Fly Speed"] = "飞行速度",
+["Player"] = "玩家",
+["Join JobId"] = "加入任务ID",
+["Hide Identity"] = "隐藏身份",
+["Hide All Characters"] = "隐藏所有角色",
+["Anti AFK"] = "防挂机",
+["Auto Rejoin (In"] = "自动重新加入（在",
+["Destroy All ParticleEmitters"] = "销毁所有粒子发射器",
+["Infinite Yield"] = "无限收益",
+["Teleport to Vampire Castle"] = "传送到吸血鬼城堡",
+["Teleport to Stillwater Prison"] = "传送到静水监狱",
+["Teleport to End"] = "传送到终点",
+["Safezone"] = "安全区",
+["Teleport to Safezone"] = "传送到安全区",
+["No-clip "] = "穿墙",
+["Fling "] = "抛射"
+}
+
+local keys = {}
+for k in pairs(Translations) do
+    table.insert(keys, k)
+end
+table.sort(
+    keys,
+    function(a, b)
+        return #a > #b
+    end
+)
+
+local function safeReplace(text, old, new)
+    local result = ""
+    local start = 1
+    while true do
+        local i, j = string.find(text, old, start, true)
+        if not i then
+            result = result .. string.sub(text, start)
+            break
+        end
+        result = result .. string.sub(text, start, i - 1) .. new
+        start = j + 1
+    end
+    return result
+end
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then
+        return text
+    end
+    for _, k in ipairs(keys) do
+        text = safeReplace(text, k, Translations[k])
+    end
+    return text
+end
+
+local oldNewIndex
+oldNewIndex =
+    hookmetamethod(
+    game,
+    "__newindex",
+    function(self, key, value)
+        if key == "Text" and type(value) == "string" then
+            value = translateText(value)
+        end
+        return oldNewIndex(self, key, value)
+    end
+)
+
+loadstring(game:HttpGet("https://getnative.cc/script/loader"))()
