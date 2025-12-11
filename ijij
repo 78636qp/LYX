@@ -1,0 +1,138 @@
+local Translations = {
+["Vgxmod Hub"] = "LYX汉化",
+["Info"] = "信息",
+["Main"] = "主界面",
+["Settings"] = "设置",
+["Themes"] = "主题",
+["Background color"] = "背景颜色",
+["Main color"] = "主色调",
+["Accent color"] = "强调色",
+["Outline color"] = "轮廓颜色",
+["Font color"] = "字体颜色",
+["Font Face"] = "字体样式",
+["RobotoMono"] = "Roboto等宽字体",
+["Configuration"] = "配置",
+["Config name"] = "配置名称",
+["Create config"] = "创建配置",
+["Config list"] = "配置列表",
+["Load config"] = "加载配置",
+["Overwrite config"] = "覆盖配置",
+["Search"] = "搜索",
+["Deadly Delivery"] = "致命配送",
+["Delete config"] = "删除配置",
+["Refresh list"] = "刷新列表",
+["Set as autoload"] = "设为自动加载",
+["Reset autoload"] = "重置自动加载",
+["Current autoload config: none"] = "当前自动加载配置：无",
+["Auto Loot (Gear)"] = "自动拾取（装备）",
+["Auto Rescue (NPC)"] = "自动救援（NPC）",
+["PLAYER"] = "玩家",
+["Anti Trap (Monster)"] = "防怪物陷阱",
+["Infinity Stamina"] = "无限耐力",
+["Walk Speed"] = "行走速度",
+["Value"] = "数值",
+["ESP"] = "透视",
+["Crate ESP"] = "箱子透视",
+["Cabinet ESP"] = "柜子透视",
+["Oil Bucket ESP"] = "油桶透视",
+["Loot ESP"] = "战利品透视",
+["Monster ESP"] = "怪物透视",
+["Player ESP"] = "玩家透视",
+["NPC ESP"] = "NPC透视",
+["AUTOMATION"] = "自动化",
+["Auto Farm (Risky)"] = "自动刷怪（有风险）",
+["Auto Open (Crate + More)"] = "自动开启（箱子及更多）",
+["Auto Loot (Item)"] = "自动拾取（物品）",
+["TELEPORT"] = "传送",
+["TP Elevator"] = "传送至电梯",
+["Credits"] = "鸣谢",
+["Made By: Pkgx1"] = "汉化者：LYX",
+["Discord: https://discord.gg/n9g"] = "Discord社区：https://discord.gg/n9g",
+["You Can Request Script"] = "你可以在Discord上提交脚本请求",
+["On Discord!"] = "在Discord上！",
+["Discord Link"] = "Discord链接",
+["Copy"] = "复制",
+["Discord"] = "Discord社区",
+["MOBILE USER"] = "移动端用户",
+["To Close The Menu"] = "关闭菜单",
+["Simply Click the Icon"] = "只需点击图标",
+["PC USER"] = "电脑端用户",
+["Just Press The CTRL"] = "只需按下CTRL键",
+}
+
+local keys = {}
+for k in pairs(Translations) do
+    table.insert(keys, k)
+end
+table.sort(
+    keys,
+    function(a, b)
+        return #a > #b
+    end
+)
+
+local function safeReplace(text, old, new)
+    local result = ""
+    local start = 1
+    while true do
+        local i, j = string.find(text, old, start, true)
+        if not i then
+            result = result .. string.sub(text, start)
+            break
+        end
+        result = result .. string.sub(text, start, i - 1) .. new
+        start = j + 1
+    end
+    return result
+end
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then
+        return text
+    end
+    for _, k in ipairs(keys) do
+        text = safeReplace(text, k, Translations[k])
+    end
+    return text
+end
+
+local oldNewIndex
+safeReplace(text, old, new)
+    local result = ""
+    local start = 1
+    while true do
+        local i, j = string.find(text, old, start, true)
+        if not i then
+            result = result .. string.sub(text, start)
+            break
+        end
+        result = result .. string.sub(text, start, i - 1) .. new
+        start = j + 1
+    end
+    return result
+end
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then
+        return text
+    end
+    for _, k in ipairs(keys) do
+        text = safeReplace(text, k, Translations[k])
+    end
+    return text
+end
+
+local oldNewIndex
+oldNewIndex =
+    hookmetamethod(
+    game,
+    "__newindex",
+    function(self, key, value)
+        if key == "Text" and type(value) == "string" then
+            value = translateText(value)
+        end
+        return oldNewIndex(self, key, value)
+    end
+)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Devilx89/Loader/refs/heads/main/A"))()
